@@ -1,0 +1,26 @@
+<apex:page standardController="Account" extensions="AccountController">
+    <script>
+        function validform(ele) {
+            return true;
+        }
+    </script>
+        <apex:listViews type="Account" />
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock title="Sublime Text" mode="edit">
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton value="提交" action="{!test}" onclick="return validform(this);" />
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection >
+                <apex:inputText value="{!prefix}" />
+            </apex:pageBlockSection>
+
+            <apex:pageBlockTable value="{!accs}" var="acc">
+                <apex:column value="{!acc.Name}" />
+                <apex:column value="{!acc.Phone}" />
+                <apex:column value="{!acc.Type}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,29 @@
+<apex:page standardcontroller="OpportunityLineItem">
+<apex:messages />
+    <apex:sectionheader title="{!$ObjectType.OpportunityLineItem.label} Edit" subtitle="{!IF(ISNULL(OpportunityLineItem.Opportunity.Name), 'New Opportunity Product',OpportunityLineItem.Opportunity.Name)}"/>
+    <apex:form >
+        <apex:pageblock mode="edit" title="{!$ObjectType.OpportunityLineItem.label} Edit">
+            <apex:pageblockbuttons >
+                <apex:commandbutton value="Save" action="{!Save}"/>
+                <apex:commandbutton value="Cancel" action="{!Cancel}"/>
+            </apex:pageblockbuttons>
+                <apex:pageblocksection title="Product Information" showheader="true" columns="2">
+                    <apex:inputfield value="{!OpportunityLineItem.OpportunityId}" required="true"/>
+                    
+                    <apex:inputfield value="{!OpportunityLineItem.Quantity}" required="true"/>
+                     <apex:outputText value="{0, number, 000,000.00}">
+                       <apex:param value="{!OpportunityLineItem.UnitPrice}" />
+                     </apex:outputText>
+                    <apex:pageblocksectionitem />
+                    <apex:inputfield value="{!OpportunityLineItem.Discount}" required="true"/>
+                    <apex:pageblocksectionitem />
+                </apex:pageblocksection>
+                <apex:pageblocksection title="Datos del servicio" showheader="true" columns="2">
+                    <apex:inputfield value="{!OpportunityLineItem.Tipo_Facturacion__c}" required="true"/>
+                    <apex:inputfield value="{!OpportunityLineItem.duracion_dias__c}" required="true"/>
+                    <apex:inputfield value="{!OpportunityLineItem.fecha_inicio_servicio__c}" required="false"/>
+                    <apex:inputfield value="{!OpportunityLineItem.dm_marcas__c}" required="false"/>
+                </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>
