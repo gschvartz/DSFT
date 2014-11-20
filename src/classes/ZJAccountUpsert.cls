@@ -3,7 +3,7 @@ global with sharing class ZJAccountUpsert{
 
    @HttpPost
     global static Map<String,String> doPost(String name, String user_name, String consultora, String fecha_registro, String idu, String id_empresa,
-                                            String website, String estado_cuenta, String idu_parent_empresa,
+                                            String website, String estado_cuenta, String idu_parent_empresa, String title,
                                             String first_name, String last_name, String phone, String other_phone, String email,
                                             String estado_comercial, String ciudad_comercial,
                                             String domicilio_comercial, String cod_postal_comercial, String razon_social,
@@ -154,6 +154,7 @@ global with sharing class ZJAccountUpsert{
             c.OtherPhone = other_phone;
             c.FirstName = first_name;
             c.LastName = last_name;
+            c.Title = title;
             c.Email = email;
             c.OwnerId = a.OwnerId;
             c.from_api__c = true;          
