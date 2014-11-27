@@ -95,12 +95,12 @@ public class ZPGenerateFutureOpp{
                  
                  
                   //Envio a Aprobar la Oportunidad Generada (el clon)
-                  
+                  /*
                   Approval.ProcessSubmitRequest req = new Approval.ProcessSubmitRequest();
                   req.setComments('Envio para Aprobacion de Oportunidad Autogenerada con facturacion Mensual');
                   req.setObjectId(oppclon.id);
                   Approval.ProcessResult result = Approval.process(req);
-                  
+                  */
                     
                 }
   }
